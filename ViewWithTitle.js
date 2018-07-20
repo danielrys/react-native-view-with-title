@@ -10,6 +10,7 @@ import {
   Animated,
   ScrollView
 } from "react-native";
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import {
   statusBarHeight,
   headerHeight,
@@ -125,7 +126,7 @@ class ViewWithTitle extends Component {
     if (this.props.children) {
       let padding = Platform.OS === "ios" && this.props.title ? 56 : 0;
       return (
-        <ScrollView
+        <KeyboardAwareScrollView
           showsVerticalScrollIndicator={false}
           scrollEventThrottle={16}
           style={{ paddingTop: padding }}
@@ -144,7 +145,7 @@ class ViewWithTitle extends Component {
           >
             {this.props.children}
           </View>
-        </ScrollView>
+        </KeyboardAwareScrollView>
       );
     }
   };

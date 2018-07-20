@@ -7,7 +7,7 @@ Installation
 ------------
 
 ```sh
-$ yarn add jvaclavik/react-native-view-with-title
+$ yarn add tomhirsch/react-native-view-with-title
 ```
 
 Usage

@@ -7,7 +7,8 @@
     "react-native": ">=v0.40.0"
   },
   "dependencies": {
-    "react-native-iphone-x-helper": ">=1.0.2"
+    "react-native-iphone-x-helper": ">=1.0.2",
+    "react-native-keyboard-aware-scroll-view": "^0.6.0"
   },
   "author": "Alexander Kuttig",
   "license": "ISC",
