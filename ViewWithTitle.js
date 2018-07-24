@@ -138,8 +138,8 @@ class ViewWithTitle extends Component {
             style={[
               styles.contentContainer,
               {
-                paddingBottom: padding
-                //height: 100 * vh // Android fix
+                paddingBottom: padding,
+                minHeight: 100 * vh
               }
             ]}
           >
