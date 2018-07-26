@@ -103,6 +103,8 @@ class ViewWithTitle extends Component {
         inputRange: [0, 70],
         outputRange: [0, -70]
       });
+
+      const { iOSBigTitleStyles = {} } = this.props;
       return (
         <Animated.View
           style={[
@@ -113,7 +115,7 @@ class ViewWithTitle extends Component {
         >
           <Animated.Text
             allowFontScaling={false}
-            style={[styles.iOSBigTitle, { fontSize: fontSize }]}
+            style={[styles.iOSBigTitle, iOSBigTitleStyles, { fontSize: fontSize }]}
           >
             {title}
           </Animated.Text>
