@@ -186,7 +186,7 @@ class ViewWithTitle extends Component {
         {this.renderIOSBigTitle()}
         {this.renderTitleArea()}
         {this.props.renderLeft && (
-          <View style={styles.leftContainer}>{this.props.renderLeft()}</View>
+          <View style={[styles.leftContainer, this.props.leftContainerStyles]}>{this.props.renderLeft()}</View>
         )}
         <View style={[styles.innerContainer, { height: 100 * vh }]}>
           {this.renderContentArea()}
