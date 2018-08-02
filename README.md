@@ -7,7 +7,7 @@ Installation
 ------------
 
 ```sh
-$ yarn add tomhirsch/react-native-view-with-title
+$ yarn add anceque/react-native-view-with-title
 ```
 
 Usage
@@ -20,6 +20,7 @@ import ViewWithTitle from 'react-native-view-with-title'
 render() {
   <ViewWithTitle
     title="Screen title"
+    style="add some styles here"
     renderLeft={() => (
       <YourComponentForBackButton
         onPress={() => this.props.navigation.goBack()}
