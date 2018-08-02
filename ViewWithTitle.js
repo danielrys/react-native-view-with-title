@@ -27,7 +27,10 @@ class ViewWithTitle extends Component {
     data: Array<Object>,
     renderItem: () => mixed,
     renderLeft: () => mixed,
-    renderRight: () => mixed
+    renderRight: () => mixed,
+    style: Object,
+    iOSBigTitleStyles: Object,
+    titleStyles: Object,
   };
 
   state: {
@@ -66,7 +69,7 @@ class ViewWithTitle extends Component {
               }
             ]}
           >
-            <Text style={styles.iOSTitle}>{title}</Text>
+            <Text style={[styles.iOSTitle, this.props.titleStyles]}>{title}</Text>
           </Animated.View>
         );
       } else {
@@ -81,7 +84,7 @@ class ViewWithTitle extends Component {
               { height: this.headerHeight }
             ]}
           >
-            <Text style={styles.androidTitle}>{title}</Text>
+            <Text style={[styles.androidTitle, this.props.titleStyles]}>{title}</Text>
           </View>
         );
       }
@@ -104,7 +107,6 @@ class ViewWithTitle extends Component {
         outputRange: [0, -70]
       });
 
-      const { iOSBigTitleStyles = {} } = this.props;
       return (
         <Animated.View
           style={[
@@ -115,7 +117,7 @@ class ViewWithTitle extends Component {
         >
           <Animated.Text
             allowFontScaling={false}
-            style={[styles.iOSBigTitle, iOSBigTitleStyles, { fontSize: fontSize }]}
+            style={[styles.iOSBigTitle, { fontSize: fontSize }, this.props.titleStyles, this.props.iOSBigTitleStyles]}
           >
             {title}
           </Animated.Text>
@@ -131,7 +133,7 @@ class ViewWithTitle extends Component {
         <KeyboardAwareScrollView
           showsVerticalScrollIndicator={false}
           scrollEventThrottle={16}
-          style={{ paddingTop: padding }}
+          style={[{ paddingTop: padding }, this.props.style]}
           onScroll={Animated.event([
             { nativeEvent: { contentOffset: { y: this.state.scrollY } } }
           ])}
