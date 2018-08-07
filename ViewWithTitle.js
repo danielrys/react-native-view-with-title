@@ -53,11 +53,6 @@ class ViewWithTitle extends Component {
           outputRange: [0, 0, 1],
           extrapolate: "clamp"
         });
-        let borderBottomColor = this.state.scrollY.interpolate({
-          inputRange: [56, 57],
-          outputRange: ["#ffffff", "#f2f2f2"],
-          extrapolate: "clamp"
-        });
         return (
           <Animated.View
             style={[
@@ -65,7 +60,6 @@ class ViewWithTitle extends Component {
               {
                 height: this.headerHeight,
                 opacity: titleOpacity,
-                borderBottomColor: borderBottomColor
               }
             ]}
           >
@@ -215,8 +209,6 @@ const styles: StyleSheet = StyleSheet.create({
     width: 100 * vw,
     alignItems: "center",
     justifyContent: "flex-end",
-    borderBottomWidth: 1,
-    borderBottomColor: "#f2f2f2"
   },
   iOSTitleContainerInvisible: {
     width: 100 * vw,
@@ -235,8 +227,6 @@ const styles: StyleSheet = StyleSheet.create({
     width: 100 * vw,
     alignItems: "flex-start",
     justifyContent: "flex-end",
-    borderBottomWidth: 1,
-    borderBottomColor: "#f2f2f2"
   },
   androidTitleContainerInvisible: {
     width: 100 * vw,
@@ -267,8 +257,6 @@ const styles: StyleSheet = StyleSheet.create({
     width: 100 * vw,
     height: 56,
     backgroundColor: "#ffffff",
-    borderBottomWidth: 1,
-    borderBottomColor: "#f2f2f2"
   },
   iOSBigTitle: {
     marginTop: 8,
