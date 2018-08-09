@@ -31,6 +31,7 @@ class ViewWithTitle extends Component {
     style: Object,
     iOSBigTitleStyles: Object,
     titleStyles: Object,
+    scrollViewProps: Object
   };
 
   state: {
@@ -131,6 +132,8 @@ class ViewWithTitle extends Component {
           onScroll={Animated.event([
             { nativeEvent: { contentOffset: { y: this.state.scrollY } } }
           ])}
+          enableOnAndroid
+          {...this.props.scrollViewProps}
         >
           <View
             style={[
